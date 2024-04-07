@@ -1,0 +1,105 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\melda\\source\\repos\\PozitifKal\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B39E759D-0E3A-427C-BB8E-D57D5A5EC706}|PozitifKal\\PozitifKal.csproj|c:\\users\\melda\\source\\repos\\pozitifkal\\pozitifkal\\controllers\\usercontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39E759D-0E3A-427C-BB8E-D57D5A5EC706}|PozitifKal\\PozitifKal.csproj|solutionrelative:pozitifkal\\controllers\\usercontrollers.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39E759D-0E3A-427C-BB8E-D57D5A5EC706}|PozitifKal\\PozitifKal.csproj|c:\\users\\melda\\source\\repos\\pozitifkal\\pozitifkal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39E759D-0E3A-427C-BB8E-D57D5A5EC706}|PozitifKal\\PozitifKal.csproj|solutionrelative:pozitifkal\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39E759D-0E3A-427C-BB8E-D57D5A5EC706}|PozitifKal\\PozitifKal.csproj|c:\\users\\melda\\source\\repos\\pozitifkal\\pozitifkal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39E759D-0E3A-427C-BB8E-D57D5A5EC706}|PozitifKal\\PozitifKal.csproj|solutionrelative:pozitifkal\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39E759D-0E3A-427C-BB8E-D57D5A5EC706}|PozitifKal\\PozitifKal.csproj|c:\\users\\melda\\source\\repos\\pozitifkal\\pozitifkal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B39E759D-0E3A-427C-BB8E-D57D5A5EC706}|PozitifKal\\PozitifKal.csproj|solutionrelative:pozitifkal\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B39E759D-0E3A-427C-BB8E-D57D5A5EC706}|PozitifKal\\PozitifKal.csproj|c:\\users\\melda\\source\\repos\\pozitifkal\\pozitifkal\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B39E759D-0E3A-427C-BB8E-D57D5A5EC706}|PozitifKal\\PozitifKal.csproj|solutionrelative:pozitifkal\\model\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserControllers.cs",
+              "DocumentMoniker": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\Controllers\\UserControllers.cs",
+              "RelativeDocumentMoniker": "PozitifKal\\Controllers\\UserControllers.cs",
+              "ToolTip": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\Controllers\\UserControllers.cs",
+              "RelativeToolTip": "PozitifKal\\Controllers\\UserControllers.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAACoAAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T23:08:02.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\Program.cs",
+              "RelativeDocumentMoniker": "PozitifKal\\Program.cs",
+              "ToolTip": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\Program.cs",
+              "RelativeToolTip": "PozitifKal\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T23:06:35.583Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\appsettings.json",
+              "RelativeDocumentMoniker": "PozitifKal\\appsettings.json",
+              "ToolTip": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\appsettings.json",
+              "RelativeToolTip": "PozitifKal\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-04-06T23:05:43.085Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "PozitifKal\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "PozitifKal\\Data\\AppDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T23:04:05.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\Model\\User.cs",
+              "RelativeDocumentMoniker": "PozitifKal\\Model\\User.cs",
+              "ToolTip": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\Model\\User.cs",
+              "RelativeToolTip": "PozitifKal\\Model\\User.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAQAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-06T23:03:40.879Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
