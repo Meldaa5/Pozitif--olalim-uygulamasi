@@ -2727,11 +2727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\PozitifKal.csproj",
+      "projectUniqueName": "C:\\Users\\melda\\Documents\\GitHub\\Pozitif--olalim-uygulamasi\\PozitifKal\\PozitifKal\\PozitifKal.csproj",
       "projectName": "PozitifKal",
-      "projectPath": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\PozitifKal.csproj",
+      "projectPath": "C:\\Users\\melda\\Documents\\GitHub\\Pozitif--olalim-uygulamasi\\PozitifKal\\PozitifKal\\PozitifKal.csproj",
       "packagesPath": "C:\\Users\\melda\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\melda\\source\\repos\\PozitifKal\\PozitifKal\\obj\\",
+      "outputPath": "C:\\Users\\melda\\Documents\\GitHub\\Pozitif--olalim-uygulamasi\\PozitifKal\\PozitifKal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\melda\\AppData\\Roaming\\NuGet\\NuGet.Config",

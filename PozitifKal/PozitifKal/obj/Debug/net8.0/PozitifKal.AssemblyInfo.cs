@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PozitifKal")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+dccc55f5f035b927a064190e35f0b9e5824ac9ed")]
 [assembly: System.Reflection.AssemblyProductAttribute("PozitifKal")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PozitifKal")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
