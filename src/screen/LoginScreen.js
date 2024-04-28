@@ -1,8 +1,19 @@
-import { StyleSheet, Text, View,Image, TextInput  } from 'react-native'
+import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity  } from 'react-native'
 import React from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'; 
 import { FontAwesome } from '@expo/vector-icons';
+import { LinearGradient } from 'expo-linear-gradient';
+import { useNavigation } from '@react-navigation/native';
+
+
 const LoginScreen = () => {
+  const navigation =useNavigation();
+  const handleRegister= ()=>{
+    navigation.navigate("SignUp")
+  }
+  const handleRegisterhome= ()=>{
+    navigation.navigate("Homepage")
+  }
   return (
     <View style={styles.container}>
       <View style={styles.topImageContainer}> 
@@ -26,9 +37,28 @@ const LoginScreen = () => {
   <FontAwesome name="paw" size={24} color="black" style={styles.inputIcon}/> 
   <TextInput secureTextEntry style={styles.textInput} placeholder='Şifre'></TextInput>
         </View>
+        <Text style={styles.sifremiUnuttumText}>Şifreni Mi Unuttun</Text>
+
+        <View style={styles.girisButtonContainer}>
+          <TouchableOpacity  onPress={handleRegisterhome}>
+          <Text style={styles.girisButtonText}>Giriş Yap</Text>
+          <LinearGradient
+        // Button Linear Gradient
+        colors={['#F97794', '#623AA2']}
+        style={styles.lineerGradient}>
+        <FontAwesome name="long-arrow-right" size={24} color="black"  style={styles.inputIcon} />
+      </LinearGradient>
+      </TouchableOpacity> 
+        </View>
+        <TouchableOpacity onPress={handleRegister}><Text style={styles.footerText}>Hesabın Yok Mu ? <Text style={{textDecorationLine:"underline"}}> Kaydol</Text>
+        </Text></TouchableOpacity>
+  
+        <View style={styles.solVectorContainer}>
+          <ImageBackground source={require("../screen/assets/Vectormorbüyük.png")} style={styles.solVectorImage} />
+        </View>
     </View>
-  )
-}
+  );
+};
 
 export default LoginScreen
 
@@ -36,6 +66,7 @@ const styles = StyleSheet.create({
   container:{
     backgroundColor: "#f5f5f5",
     flex:1,
+    position:"relative",
   },
   topImageContainer :{
 
@@ -76,5 +107,45 @@ const styles = StyleSheet.create({
   textInput:{
     flex:1,
     marginLeft:10,
+  },
+  sifremiUnuttumText:{
+    color:"#BEBEBE",
+    textAlign:"right", 
+    width:"90%",
+    fontSize: 15,
+  },
+  girisButtonContainer:{
+    flexDirection:"row",
+    marginTop:120,
+    width:"90%",
+    justifyContent:"flex-end",
+  },
+  girisButtonText:{
+    color:"black",
+    fontSize:25,
+    fontWeight:"bold",
+  },
+  lineerGradient:{
+    height:34,
+    width:56,
+    borderRadius:17,
+    alignItems:"center",
+    justifyContent:"center",
+    marginHorizontal:10,
+  },
+  footerText:{
+    color:"black",
+    textAlign:"center",
+    fontSize:15,
+    marginTop:60,
+  },
+  solVectorContainer:{
+    position:"absolute",
+    bottom: 0,
+    left: 0,
+  },
+  solVectorImage:{
+    height:250,
+    width:170,
   }
-})
+});
