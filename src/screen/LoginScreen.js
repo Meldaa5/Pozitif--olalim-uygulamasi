@@ -1,19 +1,36 @@
 import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity  } from 'react-native'
-import React from 'react'
+import React, { useState } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'; 
 import { FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-
+import UserService from "../services/UserService.js"
 
 const LoginScreen = () => {
+  const [data, setData] = useState({
+    
+    email: "",
+    password: "",
+   
+  });
   const navigation =useNavigation();
   const handleRegister= ()=>{
     navigation.navigate("SignUp")
   }
   const handleRegisterhome= ()=>{
-    navigation.navigate("Homepage")
+    console.log("basıldı");
+    const service=new UserService();
+    service.login(data).then((res)=>{
+      console.log(res);
+    }).catch((err)=>{
+      console.log(err);
+    })
+    
+    // navigation.navigate("Homepage")
   }
+  const handleChange = (key, value) => {
+    setData({ ...data, [key]: value });
+  };
   return (
     <View style={styles.container}>
       <View style={styles.topImageContainer}> 
@@ -31,11 +48,13 @@ const LoginScreen = () => {
         </View>
         <View style={styles.inputContainer}>
   <FontAwesome name="user" size={24} color="black" style={styles.inputIcon}/> 
-  <TextInput  style={styles.textInput} placeholder='Email'></TextInput>
+  <TextInput  value={data.email}
+              onChangeText={(text) => handleChange("email", text)} style={styles.textInput} placeholder='Email'></TextInput>
         </View>
         <View style={styles.inputContainer}>
   <FontAwesome name="paw" size={24} color="black" style={styles.inputIcon}/> 
-  <TextInput secureTextEntry style={styles.textInput} placeholder='Şifre'></TextInput>
+  <TextInput  value={data.password}
+              onChangeText={(text) => handleChange("password", text)} secureTextEntry style={styles.textInput} placeholder='Şifre'></TextInput>
         </View>
         <Text style={styles.sifremiUnuttumText}>Şifreni Mi Unuttun</Text>
 

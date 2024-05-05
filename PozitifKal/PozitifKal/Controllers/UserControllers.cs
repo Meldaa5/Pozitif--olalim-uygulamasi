@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using PozitifKal.Data;
@@ -40,6 +41,7 @@ public class UserControllers:ControllerBase
         return Ok(user); // Kullanıcıyı bulduğumuzda 200 OK döndür
     }
     [HttpPost("login")]
+    [DisableCors]
     public async Task<IActionResult> LoginUser(string email, string password)
     {
         var user = await appDbContext.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);

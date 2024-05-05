@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity  } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity, Button  } from 'react-native'
+import React, { useCallback, useState } from 'react'
 import 'react-native-gesture-handler';
 import Ionicons from '@expo/vector-icons/Ionicons'; 
 import { FontAwesome } from '@expo/vector-icons';
@@ -8,19 +8,40 @@ import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import SettingScreen from './SettingScreen';
 import MeditasyonScreen from './MeditasyonScreen';
-
-
+import YouTubePlayer from 'react-native-youtube-iframe';
+import positiveSentences from '../olumlamaCumleleri/positiveSentences';
 
 const Drawer = createDrawerNavigator();
 
 const HomeContent = () => {
+  const [playing, setPlaying] = useState("false")
+  // const onStateChange = useCallback((state) => {
+  //   if (state === "ended") {
+  //     setPlaying(false);
+  //     Alert.alert("video has finished playing!");
+  //   }
+  // }, []);
+  
+  // npm i react-native-webview@13.6.4 ÇALIŞMAZSA BU SÜRÜMDEN DEVAM ET 
+   
     return (
       <View style={styles.container}>
+    
         <View style={styles.topImageContainer}>
           <Image source={require("../screen/assets/Vectorpembebüyük.png")} style={styles.topImage} />
         </View>
         <View>
-          <Text style={styles.kayıtHesapText}>
+          <YouTubePlayer
+            height={300}
+            play={playing}
+            videoId={"_mVv7c-aFS8"}
+            // onChangeState={onStateChange}
+          />
+          
+        </View>
+        <View>
+        
+           <Text style={styles.kayıtHesapText}>
             Ana Sayfa
           </Text>
         </View>
