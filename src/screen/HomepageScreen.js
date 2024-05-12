@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity, Button  } from 'react-native'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import 'react-native-gesture-handler';
 import Ionicons from '@expo/vector-icons/Ionicons'; 
 import { FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
-import { NavigationContainer, useNavigation } from '@react-navigation/native';
+import { NavigationContainer, useNavigation, useRoute } from '@react-navigation/native';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import SettingScreen from './SettingScreen';
 import MeditasyonScreen from './MeditasyonScreen';
@@ -14,6 +14,14 @@ import positiveSentences from '../olumlamaCumleleri/positiveSentences';
 const Drawer = createDrawerNavigator();
 
 const HomeContent = () => {
+  const [soz, setSoz] = useState("")
+  useEffect(() => {
+  const sente=new positiveSentences();
+
+  setSoz(sente.getRandomSentence())
+   
+  }, [])
+  
   const [playing, setPlaying] = useState("false")
   // const onStateChange = useCallback((state) => {
   //   if (state === "ended") {
@@ -39,10 +47,11 @@ const HomeContent = () => {
           />
           
         </View>
+        
         <View>
         
            <Text style={styles.kayıtHesapText}>
-            Ana Sayfa
+            {soz}
           </Text>
         </View>
       </View>
@@ -50,6 +59,8 @@ const HomeContent = () => {
   };
   
   const HomepageScreen = () => {
+    const route = useRoute();
+  const email = route.params?.data;
     return (
       <Drawer.Navigator>
         <Drawer.Screen name="Ana Sayfa" component={HomeContent} />

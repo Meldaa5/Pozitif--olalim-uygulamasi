@@ -1,15 +1,40 @@
-import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity  } from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity, Alert  } from 'react-native'
+import React, { useState } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'; 
 import { FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-
+import UserService from "../services/UserService.js"
 
 const SignupScreen = () => {
+  const [data, setData] = useState({
+    
+      name: "",
+      email: "",
+      phoneNumber: "",
+      password: "",
+     
+   
+  });
+  const handleChange = (key, value) => {
+    setData({ ...data, [key]: value });
+  };
   const navigation =useNavigation();
+  const userService = new UserService();
+  
   const handleRegister= ()=>{
-    navigation.navigate("Login")
+    userService.signIn(data).then((res)=>{
+      if(res.success==false){
+        Alert.alert("Hatalı Giriş",res.message)
+      }
+      else{
+        navigation.navigate("Login")
+
+      }
+      
+    }).catch((err)=>{
+      console.log(err);
+    })
   }
   const handleRegisterhome= ()=>{
     navigation.navigate("Homepage")
@@ -31,18 +56,18 @@ const SignupScreen = () => {
         </View>
         <View style={styles.inputContainer}>
   <FontAwesome name="user" size={24} color="black" style={styles.inputIcon}/> 
-  <TextInput  style={styles.textInput} placeholder='Email'></TextInput>
+  <TextInput  onChangeText={(text) => handleChange("name", text)} value={data.name} style={styles.textInput} placeholder='Name'></TextInput>
         </View>
         <View style={styles.inputContainer}>
   <FontAwesome name="envelope-o" size={24} color="black" style={styles.inputIcon}/> 
-  <TextInput  style={styles.textInput} placeholder='Email'></TextInput>
+  <TextInput  onChangeText={(text) => handleChange("email", text)} value={data.email} style={styles.textInput} placeholder='Email'></TextInput>
         </View><View style={styles.inputContainer}>
   <FontAwesome name="mobile-phone" size={24} color="black" style={styles.inputIcon}/> 
-  <TextInput  style={styles.textInput} placeholder='Mobile'></TextInput>
+  <TextInput onChangeText={(text) => handleChange("phoneNumber", text)} value={data.phoneNumber} style={styles.textInput} keyboardType='number-pad' placeholder='Mobile'></TextInput>
         </View>
         <View style={styles.inputContainer}>
   <FontAwesome name="paw" size={24} color="black" style={styles.inputIcon}/> 
-  <TextInput secureTextEntry style={styles.textInput} placeholder='Şifre'></TextInput>
+  <TextInput onChangeText={(text) => handleChange("password", text)} value={data.password} secureTextEntry style={styles.textInput} placeholder='Şifre'></TextInput>
         </View>
         <Text style={styles.sifremiUnuttumText}>Şifreni Mi Unuttun</Text>
 

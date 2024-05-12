@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity  } from 'react-native'
+import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity, Alert  } from 'react-native'
 import React, { useState } from 'react'
 import Ionicons from '@expo/vector-icons/Ionicons'; 
 import { FontAwesome } from '@expo/vector-icons';
@@ -21,7 +21,12 @@ const LoginScreen = () => {
     console.log("basıldı");
     const service=new UserService();
     service.login(data).then((res)=>{
-      console.log(res);
+      if(res.data.success===true){
+        navigation.navigate("Homepage",{data:data.email})
+      }
+      else{
+        Alert.alert(res.data.message)
+      }
     }).catch((err)=>{
       console.log(err);
     })

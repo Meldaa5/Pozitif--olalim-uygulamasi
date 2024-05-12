@@ -9,7 +9,7 @@ export default class EmployeeService {
     async signIn(data) {
       return axios({
         method:'POST',
-        url:urlapi+"8092/api/employee/signIn",
+        url:urlapi+"8092/api/user/signIn",
         data:data
       }).then(function(response){
         return response.data
@@ -24,11 +24,11 @@ export default class EmployeeService {
     async login(data) {
         return axios({
           method:'POST',
-            url:urlapi+"44311/api/UserControllers/login?email="+data.email+"&password="+data.password,
-          //url:"https://10.95.19.72:44311/api/UserControllers/login?email=melos2%40gmail.com&password=Askım.96",
+        
+           url:urlapi+"8092/api/user/login?email="+data.email+"&password="+data.password,
           data:data
         }).then(function(response){
-            console.log(response);
+            
           return response
         }).catch(function(error){
           

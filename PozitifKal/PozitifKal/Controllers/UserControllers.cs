@@ -8,6 +8,7 @@ using PozitifKal.Model;
 namespace PozitifKal.Controllers;
 [Route("api/[controller]")]
 [ApiController]
+[EnableCors("*")]
 public class UserControllers:ControllerBase
 {   
     private readonly AppDbContext appDbContext;
@@ -41,7 +42,7 @@ public class UserControllers:ControllerBase
         return Ok(user); // Kullanıcıyı bulduğumuzda 200 OK döndür
     }
     [HttpPost("login")]
-    [DisableCors]
+    
     public async Task<IActionResult> LoginUser(string email, string password)
     {
         var user = await appDbContext.Users.FirstOrDefaultAsync(u => u.Email == email && u.Password == password);
