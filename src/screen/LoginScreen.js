@@ -4,7 +4,7 @@ import Ionicons from '@expo/vector-icons/Ionicons';
 import { FontAwesome } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 import { useNavigation } from '@react-navigation/native';
-import UserService from "../services/UserService.js"
+import UserService from "../services/UserService.js";
 
 const LoginScreen = () => {
   const [data, setData] = useState({

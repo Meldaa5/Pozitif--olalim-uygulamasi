@@ -10,10 +10,13 @@ import SettingScreen from './SettingScreen';
 import MeditasyonScreen from './MeditasyonScreen';
 import YouTubePlayer from 'react-native-youtube-iframe';
 import positiveSentences from '../olumlamaCumleleri/positiveSentences';
+import Profile from './Profile';
+import VideoScreen from './VideoScreen';
 
 const Drawer = createDrawerNavigator();
 
 const HomeContent = () => {
+  
   const [soz, setSoz] = useState("")
   useEffect(() => {
   const sente=new positiveSentences();
@@ -35,9 +38,9 @@ const HomeContent = () => {
     return (
       <View style={styles.container}>
     
-        <View style={styles.topImageContainer}>
+        {/* <View style={styles.topImageContainer}>
           <Image source={require("../screen/assets/Vectorpembebüyük.png")} style={styles.topImage} />
-        </View>
+        </View> */}
         <View>
           <YouTubePlayer
             height={300}
@@ -49,7 +52,7 @@ const HomeContent = () => {
         </View>
         
         <View>
-        
+          
            <Text style={styles.kayıtHesapText}>
             {soz}
           </Text>
@@ -59,15 +62,18 @@ const HomeContent = () => {
   };
   
   const HomepageScreen = () => {
-    const route = useRoute();
+  const route = useRoute();
   const email = route.params?.data;
     return (
       <Drawer.Navigator>
-        <Drawer.Screen name="Ana Sayfa" component={HomeContent} />
+        <Drawer.Screen name="Ana Sayfa"  component={HomeContent} />
         <Drawer.Screen name="Ayarlar" component={SettingScreen} />
         <Drawer.Screen name="Pozitif Cümleler" component={SettingScreen} />
         <Drawer.Screen name="Meditasyon" component={MeditasyonScreen} />
         <Drawer.Screen name="Midfulness" component={SettingScreen} />
+        <Drawer.Screen name="Video" component={VideoScreen} />
+        <Drawer.Screen name="Profil"  children={()=><Profile info={email}/>} />
+    
       </Drawer.Navigator>
     );
   };
@@ -76,7 +82,7 @@ const HomeContent = () => {
   
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: "#f5f5f5",
+      backgroundColor: "black",
       flex: 1,
       position: "relative",
     },
@@ -87,8 +93,8 @@ const HomeContent = () => {
     kayıtHesapText: {
       textAlign: "center",
       fontSize: 30,
-      color: "black",
+      color: "white",
       marginBottom: 30,
       fontWeight: "bold"
     },
-  });
+  }); 

@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const localHost="10.95.19.72";
+const localHost="10.95.41.104";
 const urlapi="http://"+localHost+":";
 
 
@@ -39,7 +39,7 @@ export default class EmployeeService {
         return axios({
           method:'GET',
           
-          url:urlapi+"8092/api/employee/getEmployee?email="+email,
+          url:urlapi+"8092/api/user/getEmployee?email="+email,
           data:email
         }).then(function(response){
           return response.data
