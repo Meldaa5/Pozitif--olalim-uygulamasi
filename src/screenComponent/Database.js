@@ -10,6 +10,18 @@ export const videoData = [
       title: 'gevşe',
       description: 'kendini rahat bırak',
       likes: '20k',
+    },
+    {
+      video: require('../screen/assets/video3.mp4'),
+      title: 'mutluluk',
+      description: 'kendini iyi hisset',
+      likes: '20k',
+    },
+    {
+      video: require('../screen/assets/video4.mp4'),
+      title: 'mutlulu',
+      description: 'kendini mutlu hisset',
+      likes: '20k',
     }
   ];
   

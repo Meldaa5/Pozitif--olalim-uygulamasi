@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const localHost="10.95.41.104";
+const localHost="192.168.1.32";
 const urlapi="http://"+localHost+":";
 
 
