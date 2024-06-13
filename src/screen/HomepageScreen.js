@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity, Button  } from 'react-native'
+import { StyleSheet, Text, View,Image, TextInput, ImageBackground, TouchableOpacity, Button,ScrollView   } from 'react-native'
 import React, { useCallback, useEffect, useState } from 'react'
 import 'react-native-gesture-handler';
 import Ionicons from '@expo/vector-icons/Ionicons'; 
@@ -15,17 +15,29 @@ import VideoScreen from './VideoScreen';
 
 const Drawer = createDrawerNavigator();
 
+const emojiler = [
+  "😭", // Çok mutsuz
+  "😔", // Mutsuz
+  "🤔", // Nötr
+  "😇", // Mutlu
+  "🤩" // Çok mutlu
+];
 const HomeContent = () => {
   
   const [soz, setSoz] = useState("")
+  const [selectedEmoji, setSelectedEmoji] = useState(null);
+
   useEffect(() => {
   const sente=new positiveSentences();
 
   setSoz(sente.getRandomSentence())
    
-  }, [])
+  }, []);
   
-  const [playing, setPlaying] = useState("false")
+  const [playing, setPlaying] = useState("false");
+  const selectEmoji = (index) => {
+    setSelectedEmoji(index);
+  };
   // const onStateChange = useCallback((state) => {
   //   if (state === "ended") {
   //     setPlaying(false);
@@ -45,13 +57,27 @@ const HomeContent = () => {
           <YouTubePlayer
             height={300}
             play={playing}
-            videoId={"_mVv7c-aFS8"}
+            videoId={"3rXPVw_qYqE"}
             // onChangeState={onStateChange}
           />
           
         </View>
-        
-        <View>
+        <ScrollView horizontal contentContainerStyle={styles.emojiContainer}>
+        {emojiler.map((emoji, index) => (
+          <TouchableOpacity
+            key={index}
+            style={[
+              styles.emoji,
+              selectedEmoji === index && styles.selectedEmoji
+            ]}
+            onPress={() => selectEmoji(index)}
+          >
+            <Text style={styles.emojiText}>{emoji}</Text>
+          </TouchableOpacity>
+        ))}
+      </ScrollView>
+
+        <View style={styles.sozContainer}>
           
            <Text style={styles.kayıtHesapText}>
             {soz}
@@ -82,7 +108,7 @@ const HomeContent = () => {
   
   const styles = StyleSheet.create({
     container: {
-      backgroundColor: "black",
+      backgroundColor: "white",
       flex: 1,
       position: "relative",
     },
@@ -93,8 +119,43 @@ const HomeContent = () => {
     kayıtHesapText: {
       textAlign: "center",
       fontSize: 30,
-      color: "white",
-      marginBottom: 30,
+      color: "black",
+      
       fontWeight: "bold"
+    },
+    sozContainer: {
+      position: 'absolute',
+      top: 270, // You can adjust this value to move the text container closer to the emojis
+      left: 0,
+      right: 0,
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginVertical: 20,
+      padding: 2,
+      backgroundColor: 'white',
+      borderRadius: 10,
+      shadowColor: 'purple', // Gölge rengi
+      shadowOffset: { width: 0, height: 2 }, // Gölge ofseti
+      shadowOpacity: 0.25, // Gölge opaklığı
+      shadowRadius: 3.84, // Gölge yarıçapı
+      elevation: 15, // Android için yükseklik (gölge)
+    },
+    emojiContainer: {
+      marginTop:165,
+      flexDirection: 'row',
+      justifyContent: 'center',
+      alignItems: 'center',
+      marginVertical: 20,
+    },
+    emoji: {
+      padding: 5,
+      marginHorizontal: 5,
+      borderRadius: 5,
+    },
+    selectedEmoji: {
+      backgroundColor: '#ddd',
+    },
+    emojiText: {
+      fontSize: 40,
     },
   }); 

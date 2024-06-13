@@ -28,7 +28,7 @@ const Profile = ({ info }) => {
 
   
     const backgroundColor = colorAnimation.interpolate({
-      inputRange: [0, 0.33, 0.66, 1], // 0'dan başlayıp tekrar 1'e dönecek şekilde ayarlandı
+      inputRange: [0, 0.33, 0.66, 1], 
       outputRange: ['#ff0000', '#00ff00', '#0000ff', '#ff0000'] // dairesel geçiş
   });
 
@@ -45,6 +45,7 @@ const Profile = ({ info }) => {
                 <Text style={styles.userInfo}>{data.name}</Text>
                 </View>
                 <View style={styles.semicircleContainer}>
+                <View style={styles.whitecircle} />
                 <View style={styles.semicircle} />
                 <View style={[styles.semicircle, styles.semicircle2]} />
             </View>
@@ -86,31 +87,46 @@ const styles = StyleSheet.create({
         height: 116, 
         alignItems: 'center',
         justifyContent: 'center', 
+        zIndex:55
     },
     foto: {
       width: 110,
       height: 110,
       borderRadius: 55,
+      
   },
   semicircleContainer: {
       position: 'absolute',
-      top: 130,
+      top: 150,
       alignItems: 'center',
       justifyContent: 'center',
   },
+  whitecircle: {
+    width:350 * 1.2,
+    height: 550 * 0.6,
+    borderRadius: 300*0.9,
+    backgroundColor: 'white',
+    position: 'absolute',
+    top: -250,
+    zIndex:-1
+    
+},
   semicircle: {
-      width:450 * 1.2,
-      height: 250 * 0.6,
-      borderRadius: 600,
-      backgroundColor: '#3f51b5',
+      width:320 * 1.2,
+      height: 470 * 0.6,
+      borderRadius: 300*0.9,
+      backgroundColor: '#7400e8',
       position: 'absolute',
-      top: 80,
+      top: -170,
+      zIndex:-2
+      
   },
   semicircle2: {
-      width: 500,
-      height: 200 * 0.5,
-      borderRadius: 600,
-      backgroundColor: '#2196f3',
-      top: 80,
+      width: 450,
+      height: 680 * 0.5,
+      borderRadius: 100*1.9,
+      backgroundColor: '#b020e8',
+      top: -210,
+      zIndex:-3
   },
 });
